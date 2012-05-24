@@ -52,5 +52,7 @@ ggplot(data=d, aes(x=photo, y=pdrate)) + geom_point() +
 
 m0 = lm(gdens ~ 1, data=d)
 m1 = lm(gdens ~ photo, data=d)
+m2 = lm(gdens ~ photo + I(photo^2), data=d)
 
-AICtab(m0,m1)
+
+AICtab(m0,m1, m2)
